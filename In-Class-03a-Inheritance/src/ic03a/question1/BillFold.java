@@ -14,7 +14,7 @@ public class BillFold extends Card
    
     public BillFold()
 {
-    // TODO Auto-generated constructor stub
+    super();
 }
 
     public void addCard(Card newCard)
