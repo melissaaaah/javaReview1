@@ -1,6 +1,6 @@
 package ic03a.question1;
 
-public class BillFoldTester
+public class BillFoldTester extends BillFold
 {
 
     public static void main(String[] args)
@@ -8,11 +8,17 @@ public class BillFoldTester
         // TODO Auto-generated method stub
         DriverLicense d = new DriverLicense("Bob B.", 2019);
         callingCard c = new callingCard("Other Card", 209, 1);
-        d.format();
         
-        BillFold b = new BillFold();
+        BillFold wallet = new BillFold();
         
-        System.out.println(b.formatCards());
+        wallet.addCard(d);
+        wallet.addCard(c);
+        
+        IDCard John = new IDCard("John",123);
+        
+        System.out.println(John.toString());
+        
+        System.out.println(wallet.formatCards());
     }
 
 }

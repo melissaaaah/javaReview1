@@ -14,4 +14,19 @@ public class IDCard extends Card
     {
         return super.format() + "\nID Number: " + idNumber;
     }
+    
+    public String toString()
+    {
+    	return "IDCard[name=" + getName() + "] [idNumber=" + idNumber + "]";
+    }
+    
+    public boolean equals(Object other)
+    {
+    	if(!super.equals(other))
+    	{
+    		return false;
+    	}
+    	IDCard otherCard = (IDCard) other;
+    	return idNumber == otherCard.idNumber;
+    }
 }

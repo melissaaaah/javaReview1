@@ -12,7 +12,23 @@ public class DriverLicense extends Card
     
     public String format()
     {
-        return  super.format() + "\n Expiration Year: "
+        return super.format() + "\n Expiration Year: "
                 + expYear;
+    }
+    
+    public String toString()
+    {
+    	return "DriverLicense[name=" + getName() + "] [Expiration Year="
+    			+ expYear;
+    }
+    
+    public boolean equals(Object other)
+    {
+    	if(!super.equals(other))
+    	{
+    		return false;
+    	}
+    	DriverLicense otherCard = (DriverLicense) other;
+    	return expYear == otherCard.expYear;
     }
 }
