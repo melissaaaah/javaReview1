@@ -30,7 +30,7 @@ public class CheapScraper2CSV
 			String outputFileName = args[2];
 			*/
 			
-			int columns = Integer.parseInt(args[0]);
+			Integer.parseInt(args[0]);
 			
 			FileReader fr = new FileReader(args[1]);
 			FileWriter fw = new FileWriter(args[2]);
