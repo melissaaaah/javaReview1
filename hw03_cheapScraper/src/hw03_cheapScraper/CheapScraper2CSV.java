@@ -31,7 +31,6 @@ public class CheapScraper2CSV
 			*/
 			
 			Integer.parseInt(args[0]);
-			
 			FileReader fr = new FileReader(args[1]);
 			FileWriter fw = new FileWriter(args[2]);
  
@@ -57,6 +56,10 @@ public class CheapScraper2CSV
 			fw.write(sb.toString());
 			fw.close();
 			
+			for(int i = 0; i< args.length; ++i)
+            {
+                System.out.println(args[i]);
+            }
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Please enter the correct data type");
