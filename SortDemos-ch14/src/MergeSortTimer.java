@@ -15,7 +15,9 @@ public class MergeSortTimer
 
         // Construct random array
 
-        int[] a = ArrayUtil.randomIntArray(n, 100);
+        for(int i = 0 ; i<= 9; i++)
+        {
+        int[] a = ArrayUtil.randomIntArray(n*i, 10000);
 
         // Use stopwatch to time merge sort
 
@@ -27,6 +29,7 @@ public class MergeSortTimer
 
         System.out.println("Elapsed time: " 
                 + timer.getElapsedTime() + " milliseconds");
+        }
     }
 }
 
