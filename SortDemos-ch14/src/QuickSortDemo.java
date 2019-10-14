@@ -8,12 +8,15 @@ public class QuickSortDemo
 {  
     public static void main(String[] args)
     {  
-        int[] a = ArrayUtil.randomIntArray(20, 100);
-        System.out.println(Arrays.toString(a));
+        for(int size = 1 ; size <= 9; size++)
+        {
+        int[] a = ArrayUtil.randomIntArray(size*10000, size*10000);
+        QuickSorter.resetcCount();
 
         QuickSorter.sort(a);
 
-        System.out.println(Arrays.toString(a));
+        System.out.println(a.length + " Elements. Comparisons made: " + QuickSorter.getcCount()
+        + " Number of swaps: " + SelectionSorter.cSwap);
+        }
     }
 }
-

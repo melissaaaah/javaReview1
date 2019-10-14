@@ -9,13 +9,16 @@ public class SelectionSortTimer
 {  
     public static void main(String[] args)
     {  
+        /*
         Scanner in = new Scanner(System.in);
         System.out.print("Enter array size: ");
         int n = in.nextInt();
-
+        */
           // Construct random array
-
-        int[] a = ArrayUtil.randomIntArray(n, 100);
+        
+        for(int n = 1; n <= 9 ; n++)
+        {
+            int[] a = ArrayUtil.randomIntArray(n*10000, 10000);
 
         // Use stopwatch to time selection sort
 
@@ -27,6 +30,7 @@ public class SelectionSortTimer
 
         System.out.println("Elapsed time: " 
                 + timer.getElapsedTime() + " milliseconds");
+        }
         
     }
 }

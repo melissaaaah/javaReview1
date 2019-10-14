@@ -5,6 +5,7 @@
 public class SelectionSorter
 {
     public static long cCount = 0;
+    public static long cSwap = 0;
     public static void resetcCount() { cCount = 0; }
     public static void cCountInc() { cCount++; }
     public static long getcCount() { return cCount; }
@@ -34,7 +35,7 @@ public class SelectionSorter
         for (int i = from + 1; i < a.length; i++)
         {
             cCountInc();
-            if (a[i] < a[minPos]) { minPos = i; }
+            if (a[i] < a[minPos]) { minPos = i; cSwap++; }
         }
         return minPos;
     }
