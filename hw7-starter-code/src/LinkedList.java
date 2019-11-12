@@ -60,9 +60,13 @@ public class LinkedList
     public Object get(int n)
     {
         // TODO: Complete this method . . .
+        Node node = first;
+        for (int i = 0; i<n;i++)
+            node = node.next;
         
         
-        //return . . .
+        //return ....
+        return node.data;
     }
 
     /**
@@ -73,8 +77,11 @@ public class LinkedList
     public void set(int n, Object newElement)
     {
         // TODO: Complete this method . . .
+        Node node = first;
+        for(int i = 0; i <n; i++)
+            node = node.next;
         
-        
+        node.data = newElement;
     }
 
     /**
@@ -88,9 +95,13 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
+        if(first == null) {throw new NoSuchElementException();}
+        Node current = first;
         
-        
+        for(int i = 0; i<n ; i++)
+            current = current.next;
         //return . . .
+        return current;
     }
 
     /**
@@ -102,9 +113,17 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
-        
+        Node current = first;
+        while(current != null)
+        {
+            if(current.data.equals(obj))
+                return true;
+            else
+            current = current.next;
+        }
         
         //return . . .
+        return false;
     }
 
     @Override
@@ -116,7 +135,12 @@ public class LinkedList
         // Format: [obj1, obj2, obj3, ...]
         // Use .toString() to convert object data of each element to String
         // Build the answer using out += ...
-        
+       Node current = first;
+       while(current != null)
+       {
+           out += current.data.toString() + ", ";
+           current = current.next;
+       }
         
         
         return out + "]";
