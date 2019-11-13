@@ -4,11 +4,14 @@
  */
 public class QuickSorter
 {
-    public static long cCount = 0;
-    public static long cSwap = 0;
-    public static void resetcCount() { cCount = 0; }
-    public static void cCountInc() { cCount++; }
-    public static long getcCount() { return cCount; }
+	 public static long cCount = 0;
+	    public static long cSwap = 0;
+	    public static void resetcCount() { cCount = 0; }
+	    public static void resetcSwap() { cSwap = 0; } 
+	    public static void cSwapInc() { cSwap++; } 
+	    public static void cCountInc() { cCount++; }
+	    public static long getcSwap() { return cSwap; }
+	    public static long getcCount() { return cCount; }
     /**
       Sorts an array, using quick sort.
       @param a the array to sort
@@ -46,9 +49,10 @@ public class QuickSorter
         int j = to + 1;
         while (i < j)
         {
-            i++; while (a[i] < pivot) { i++; cCountInc();}
-            j--; while (a[j] > pivot) { j--; cCountInc();}
+            i++; while (a[i] < pivot) { i++; }
+            j--; while (a[j] > pivot) { j--; }
             if (i < j) { ArrayUtil.swap(a, i, j); cSwap++; }
+            cCount++;
         }
         return j;
     }

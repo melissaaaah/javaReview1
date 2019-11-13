@@ -47,5 +47,17 @@ public class ArrayUtil
         a[i] = a[j];
         a[j] = temp;
     }
+
+	public static int[] reverse(int[] array) {
+		// TODO Auto-generated method stub
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			int temp = array[i];
+			array [i] = array[array.length - i - 1];
+			array[array.length - i - 1] = temp;
+		}
+		return array;
+	}
 }
 

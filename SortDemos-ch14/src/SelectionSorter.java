@@ -7,7 +7,10 @@ public class SelectionSorter
     public static long cCount = 0;
     public static long cSwap = 0;
     public static void resetcCount() { cCount = 0; }
+    public static void resetcSwap() { cSwap = 0; } 
+    public static void cSwapInc() { cSwap++; } 
     public static void cCountInc() { cCount++; }
+    public static long getcSwap() { return cSwap; }
     public static long getcCount() { return cCount; }
     /**
       Sorts an array, using selection sort.
@@ -34,8 +37,8 @@ public class SelectionSorter
         int minPos = from;
         for (int i = from + 1; i < a.length; i++)
         {
-            cCountInc();
-            if (a[i] < a[minPos]) { minPos = i; cSwap++; }
+        	cCount++;
+            if (a[i] < a[minPos]) { minPos = i; cSwap++;  }
         }
         return minPos;
     }

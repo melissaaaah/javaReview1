@@ -4,13 +4,21 @@
  */
 public class MergeSorter
 {
+	 public static long cCount = 0;
+	    public static long cSwap = 0;
+	    public static void resetcCount() { cCount = 0; }
+	    public static void resetcSwap() { cSwap = 0; } 
+	    public static void cSwapInc() { cSwap++; } 
+	    public static void cCountInc() { cCount++; }
+	    public static long getcSwap() { return cSwap; }
+	    public static long getcCount() { return cCount; }
     /**
       Sorts an array, using merge sort.
       @param a the array to sort
      */
     public static void sort(int[] a)
     {  
-        if (a.length <= 1) { return; }
+        if (a.length <= 1) { cCount++; return; }
         int[] first = new int[a.length / 2];
         int[] second = new int[a.length - first.length];
         // Copy the first half of a into first, the second half into second
@@ -20,8 +28,9 @@ public class MergeSorter
         }
         for (int i = 0; i < second.length; i++) 
         { 
-            second[i] = a[first.length + i]; 
+            second[i] = a[first.length + i];
         }
+        
         sort(first);
         sort(second);
         merge(first, second, a);
@@ -51,9 +60,11 @@ public class MergeSorter
             else
             {  
                 a[j] = second[iSecond];
-                iSecond++;
+                iSecond++;   
+                cSwap++;
             }
-            j++;
+            j++;          
+            cCount++;
         }
 
         // Note that only one of the two loops below copies entries
@@ -62,6 +73,7 @@ public class MergeSorter
         { 
             a[j] = first[iFirst]; 
             iFirst++; j++;
+           
         }
         // Copy any remaining entries of the second half
         while (iSecond < second.length) 

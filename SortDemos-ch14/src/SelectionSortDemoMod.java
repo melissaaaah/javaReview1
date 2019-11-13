@@ -8,36 +8,48 @@ public class SelectionSortDemoMod
 {  
     public static void main(String[] args)
     {  
-        for (int size = 1; size <= 6; ++size)
-             {
-                  int[] a = ArrayUtil.randomIntArray(size*1000, size*1000);
-                 
-                  
-                  SelectionSorter.resetcCount();
-                  
-                  SelectionSorter.sort(a);
-                  
-                  System.out.println(a.length + "elements. Comparisons made: " + SelectionSorter.getcCount());
-              }
+        
+    	 int[] a = ArrayUtil.randomIntArray(10000, 10000);
+         
+         
+         SelectionSorter.sort(a);
+
+         System.out.println(a.length + " Random elements. Comparisons made: " + SelectionSorter.getcCount());
+         System.out.println("Swaps made: " + SelectionSorter.cSwap);
+         
+         System.out.println();
+         
+         
+     	// Construct sorted array
+     	
+     	int[] b = new int[10000];
+         for(int i = 0; i < b.length; i++)
+         {
+         	b[i] = i;
+         }
+         
+         SelectionSorter.resetcCount();
+         SelectionSorter.resetcSwap();
+         SelectionSorter.sort(b);
+         
+         System.out.println(b.length + " Sorted elements. Comparisons made: " + SelectionSorter.getcCount());
+         System.out.println("Swaps made: " + SelectionSorter.getcSwap());
+         
+         System.out.println();
+         
+         //Reverse sorted array
+         int[] c = new int[10000];
+         for(int i = 0; i < c.length; i++)
+         {
+         	
+         	c[i] = c.length - i;
+         }
+        
+         SelectionSorter.resetcCount();
+         SelectionSorter.resetcSwap();
+         SelectionSorter.sort(c);
+         
+         System.out.println(c.length + " Reverse elements. Comparisons made: " + SelectionSorter.getcCount());
+         System.out.println("Swaps made: " + SelectionSorter.getcSwap());
     }
 }
-/*
- * 
- * Scanner in = new Scanner(System.in);
- * system.out.println("enter array size");
- * int n = in.nextInt();
- * 
- * 
- * for(int size = 1; size <= 6; ++size)
- * {
- *      int[] a = ArrayUtil.randomIntArray(size*1000, size*1000);
- *      
- *      
- *      SelectionSorter.resetcCount();
- *      
- *      SelectionSorter.sort(a);
- *      
- *      System.out.println(a.length + "elements. Comparisons made: " + SelectionSorter.getcCount());
- */
-
-
