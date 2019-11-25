@@ -80,6 +80,7 @@ public class MyCustomFrame extends JFrame
         {
             rect.setLocation((int)rect.getX()+5, (int)rect.getY());
             component.repaint();
+            rect.setSize((int)rect.getWidth()-2, (int)rect.getHeight()-2);
         }
     }
     
@@ -89,6 +90,7 @@ public class MyCustomFrame extends JFrame
         {
             rect.setLocation((int)rect.getX()-5, (int)rect.getY());
             component.repaint();
+            rect.setSize((int)rect.getWidth()+2, (int)rect.getHeight()+2);
         }
     }
     
